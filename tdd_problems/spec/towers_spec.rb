@@ -15,13 +15,9 @@ describe Tower do
 
   describe '#move' do
     subject(:towers) { Tower.new }
-    it 'should pop a disc from one tower' do
+    it 'should move a disc from one tower to another' do
       towers.move(0, 1)
       expect(towers.towers.first).to eq([3,2])
-    end
-
-    it 'should push a disc into another tower' do
-      towers.move(0, 1)
       expect(towers.towers[1]).to eq([1])
     end
 
@@ -49,6 +45,10 @@ describe Tower do
     it 'should end game if second or third tower are completely filled' do
       towers.towers[0] = []
       towers.towers[1] = [3,2,1]
+      expect(towers).to be_won
+
+      towers.towers[1] = []
+      towers.towers[2] = [3,2,1]
       expect(towers).to be_won
     end
   end
