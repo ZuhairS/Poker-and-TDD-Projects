@@ -7,23 +7,3 @@
     end
 
   end
-
-  class Deck
-
-    def initialize
-      
-    end
-
-  end
-
-  class Player
-
-  end
-
-  class Hand
-
-  end
-
-  class Game
-
-  end
